@@ -4,3 +4,18 @@ Der Interpreter erkennt an dem zugewiesenem Wert, um welche Datentypen es sich h
 Bsp.: 
 	var = "Ein String" 	# var ist ein Objekt der Klasse String
 	var.class			# die Klassenmethode .class gibt den Klassentyp des Objektes aus
+
+Besonderheiten von Strings:
+	Konkatenieren:
+		var = "String"
+		puts "Dies ist ein" + var 
+	oder
+		puts "Dies ist ein #{var}"
+
+	Das Konstrukt: "Zeichenkette #{ ruby code } " ermöglicht es in einer Zeichenkette Code auszuführen und Variablen einzufügen.
+
+	Bsp.:
+		movie = "Goonies"
+		rank = 10
+		puts "#{movie} hat das Ranking #{rank} am #{Time.now}"
+	
