@@ -16,20 +16,17 @@
 
 
 class Kunde
-
-  attr_accessor :gehalt, :name
+  attr_accessor :name, :gehalt
   attr_writer :adresse
 
-
-  def initialize(first_name, last_name)
-    @name = "#{first_name.capitalize} #{last_name.capitalize}"
-
+  def initialize(name)
+    @name = capitalize_title(name)
   end
 
   def adresse
     "#{@name}, #{@adresse}"
-
   end
+
 
   def capitalize_title(str)
     str_array = str.split
@@ -40,48 +37,25 @@ class Kunde
     ret.strip
   end
 
-
-  def name=(name)
-    @name = capitalize_title(name)
-    # @name_split = @name.split
-    # @name_split
-    #@name = @name[0].to_s.capitalize + " " + @name[1].to_s.capitalize
-
-  end
-
-
-
 end
 
 
-
-kunde1 = Kunde.new "theo", "sommer"
-kunde1.gehalt = "24000€"
-
-kunde1.name = "theo sonnenschein"
- #puts kunde1.name
-kunde1.adresse = "Hermelinweg 11, 22159 Hamburg"
-kunde1.adresse
-#kunde1 = kunde1.adresse + " " + kunde1.gehalt
-#p kunde1
-
-
 class Kredit
-  attr_accessor :kredit
 
   def initialize(kunde)
     @kunde = kunde
   end
 
-
   def kunde
-    @kunde
-    "#{@kunde}"
+    "#{@kunde.adresse}, Jahresgehalt: #{@kunde.gehalt * 12}"
   end
-
 end
-kredit1 = Kredit.new(kunde1.adresse + " " + kunde1.gehalt)
-kredit1.kunde
-kredit1.kredit = "5000€"
-p kredit1.kunde
-puts kredit1.kredit
+
+kunde1 = Kunde.new("Theo Sommer")
+kunde1.name = "theo sonnenschein"
+puts kunde1.name
+kunde1.gehalt = 2000
+kunde1.adresse = "Hermelinweg 11, 22159 Hamburg"
+puts kunde1.adresse
+kredit1 = Kredit.new(kunde1)
+puts kredit1.kunde

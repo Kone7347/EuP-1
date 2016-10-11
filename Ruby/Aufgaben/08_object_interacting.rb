@@ -18,6 +18,36 @@
 # 	Curly got w00ted!
 # I'm Curly with a health of 145 and a score of 150.
 
+class Game
+  def initialize(titel)
+    @titel = titel
+    @players = []
+  end
+
+  def add_player(player)
+    @players << player
+  end
+
+  def play
+    puts "There are #{@players.size} players in #{@titel}:"
+    @players.each do |player|
+      puts player
+    end
+
+
+
+    @players.each do |player|
+      player.blam
+      player.w00t
+      player.w00t
+      puts player
+    end
+
+    
+  end
+end
+
+
 class Player
 
   attr_accessor :name
@@ -54,41 +84,11 @@ player3 = Player.new("curly", 125)
 
 players = [player1, player2, player3]
 
-puts "There are #{players.size} players in the game:"
-players.each do |player|
-  puts player
-end
-
-players.each do |player|
-  puts player.health
-end
-
-players.each do |player|
-  player.blam
-  player.w00t
-  player.w00t
-  puts player
-end
-
-players.pop
-player4 = Player.new("Shemp", 90)
-players.push(player4)
-puts players
 
 
+game1 = Game.new("Knuckleheads")
+game1.add_player(player1)
+game1.add_player(player2)
+game1.add_player(player3)
+game1.play
 
-class Game
-  def initialize(title)
-    @title = title
-    @players = []
-  end
-
-  def add_player(name)
-    @players << name
-  end
-
-  def play
-    puts ""
-  end
-
-end
