@@ -87,8 +87,11 @@ players = [player1, player2, player3]
 
 
 game1 = Game.new("Knuckleheads")
-game1.add_player(player1)
-game1.add_player(player2)
-game1.add_player(player3)
+#players.each do | player |
+ # game1.add_player(player)
+#end
+
+players.each { |player| game1.add_player(player)}
+
 game1.play
 
