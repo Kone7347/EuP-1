@@ -68,7 +68,7 @@ arr_prime = ["2", "3", "5", "7", "11", "13", "17", "19", "23", "29"]
 arr_prime.each do |item|
   if item.length == 1
     puts "#{item} ist einstellig."
-  end
+  end                                   #Hier hätte man auch ein elsif wie unten in Aufgabe c) einbauen können
   if item.length == 2
     puts "#{item} ist zweistellig."
   end
