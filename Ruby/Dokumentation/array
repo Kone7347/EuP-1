@@ -1,0 +1,43 @@
+Definition:
+  Ein Array ist eine geordnete Liste, die Verweise auf andere Objekte enthält.
+
+Neues Array anlegen
+    var = []
+    var = Array.new
+    var = ["value1", "value2"]
+    var = %w(value1 value2)
+
+Werte hinzufügen
+  var << "value3"
+  var[3] = "value4"
+  var.push("value5")
+
+Methoden von Arrays
+Array Groesse:
+  var.size || var.length
+Letztes Element entfernen
+  var.pop
+Array leer?
+  var.empty?
+Löschen eines Elementes an bestimmter Stelle
+  var.delet_at(index)
+Die einzelnen Elemente des Arrays mit einem bestimmten "String-Wert" konkettinieren.
+  var.join( "und" )
+Die Werte des Arrays zufällig vermischen
+  var.shuffle
+  var.shuffle!
+
+Itterations-Methoden:
+var = %w(ich und du)
+var.each { |n| puts n}
+  Methode zum durchlaufen der einzelnen Elemente
+
+var.select
+  Methode, die im Block einen boolschen Wert erwartet und bei true den Inhalt ausführt
+  return = var.select { |v| v.size > 1}
+
+var.reject
+  Gegenteil von select, gibt die false Werte aus
+
+var.sort
+  gibt ein sortiertes Array zurück
