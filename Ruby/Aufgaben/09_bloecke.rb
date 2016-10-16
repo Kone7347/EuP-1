@@ -228,7 +228,6 @@ str_2 = "Fussball, Bier, Programmieren"
 
 str3 = str_1.delete(",").split + str_2.delete(",").split
 str3.to_a
-p str3.class
 match, diff = str3.partition { |str3| str3.eql?("Programmieren") }
 match.uniq!
 
