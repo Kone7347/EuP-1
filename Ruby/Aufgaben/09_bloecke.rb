@@ -223,12 +223,29 @@ puts "Aufgabe 4."
 str_1 = "Programmieren, Federball, Whisky"
 str_2 = "Fussball, Bier, Programmieren"
 
+str_1 = "Programmieren, Federball, Whisky"
+str_2 = "Fussball, Bier, Programmieren"
+
 str3 = str_1.delete(",").split + str_2.delete(",").split
 str3.to_a
-diff = str3.reject{ |e| str3.count(e) > 1 }.uniq
-match = str3.select{ |e| str3.count(e) > 1 }.uniq
+p str3.class
+match, diff = str3.partition { |str3| str3.eql?("Programmieren") }
+match.uniq!
 
 ergebnis = Hash.new
 ergebnis.store(:diff, diff)
 ergebnis.store(:match, match)
 puts ergebnis
+
+
+# Der oben stehende code ist vorzuziehen, da er sich auf Methoden bezieht, welche im Unterricht behandelt wurden.
+
+# str3 = str_1.delete(",").split + str_2.delete(",").split
+# str3.to_a
+# diff = str3.reject{ |e| str3.count(e) > 1 }.uniq
+# match = str3.select{ |e| str3.count(e) > 1 }.uniq
+#
+# ergebnis = Hash.new
+# ergebnis.store(:diff, diff)
+# ergebnis.store(:match, match)
+#puts ergebnis
